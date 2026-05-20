@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Paper Writing"
+  short_description: "Draft research papers from ideas and code"
+  default_prompt: "Use $research-paper-writing to turn my idea, code, and results into a submission-ready research paper draft."

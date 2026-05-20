@@ -1,0 +1,142 @@
+Epoch 1 Validation -> Avg Loss: 0.3651, Accuracy: 0.6897
+  -> New best model saved to best_pinpoint_model_antisocial.pth (Val Loss: 0.3651)
+
+===== Epoch 2/15 =====
+                                                                                                  
+Epoch 2 Training   -> Avg Loss: 1.8395, Accuracy: 0.6850
+                                                             
+Epoch 2 Validation -> Avg Loss: 0.3895, Accuracy: 0.7290
+
+===== Epoch 3/15 =====
+                                                                                                  
+Epoch 3 Training   -> Avg Loss: 1.7872, Accuracy: 0.7106
+                                                             
+Epoch 3 Validation -> Avg Loss: 0.3183, Accuracy: 0.7006
+  -> New best model saved to best_pinpoint_model_antisocial.pth (Val Loss: 0.3183)
+
+===== Epoch 4/15 =====
+                                                                                                  
+Epoch 4 Training   -> Avg Loss: 1.7309, Accuracy: 0.7288
+                                                             
+Epoch 4 Validation -> Avg Loss: 0.2930, Accuracy: 0.8052
+  -> New best model saved to best_pinpoint_model_antisocial.pth (Val Loss: 0.2930)
+
+===== Epoch 5/15 =====
+                                                                                                  
+Epoch 5 Training   -> Avg Loss: 1.6898, Accuracy: 0.7821
+                                                             
+Epoch 5 Validation -> Avg Loss: 0.2882, Accuracy: 0.7290
+  -> New best model saved to best_pinpoint_model_antisocial.pth (Val Loss: 0.2882)
+
+===== Epoch 6/15 =====
+                                                                                                  
+Epoch 6 Training   -> Avg Loss: 1.6361, Accuracy: 0.8047
+                                                             
+Epoch 6 Validation -> Avg Loss: 0.2228, Accuracy: 0.8252
+  -> New best model saved to best_pinpoint_model_antisocial.pth (Val Loss: 0.2228)
+
+===== Epoch 7/15 =====
+                                                                                                  
+Epoch 7 Training   -> Avg Loss: 1.5710, Accuracy: 0.8226
+                                                             
+Epoch 7 Validation -> Avg Loss: 0.2232, Accuracy: 0.8516
+
+===== Epoch 8/15 =====
+                                                                                                  
+Epoch 8 Training   -> Avg Loss: 1.6062, Accuracy: 0.8332
+                                                             
+Epoch 8 Validation -> Avg Loss: 0.1938, Accuracy: 0.8619
+  -> New best model saved to best_pinpoint_model_antisocial.pth (Val Loss: 0.1938)
+
+===== Epoch 9/15 =====
+                                                                                                  
+Epoch 9 Training   -> Avg Loss: 1.5643, Accuracy: 0.8615
+                                                             
+Epoch 9 Validation -> Avg Loss: 0.1973, Accuracy: 0.8477
+
+===== Epoch 10/15 =====
+                                                                                                   
+Epoch 10 Training   -> Avg Loss: 1.5248, Accuracy: 0.8656
+                                                             
+Epoch 10 Validation -> Avg Loss: 0.1863, Accuracy: 0.8774
+  -> New best model saved to best_pinpoint_model_antisocial.pth (Val Loss: 0.1863)
+
+===== Epoch 11/15 =====
+                                                                                                   
+Epoch 11 Training   -> Avg Loss: 1.5236, Accuracy: 0.8647
+                                                             
+Epoch 11 Validation -> Avg Loss: 0.1966, Accuracy: 0.8884
+
+===== Epoch 12/15 =====
+                                                                                                   
+Epoch 12 Training   -> Avg Loss: 1.5272, Accuracy: 0.8815
+                                                             
+Epoch 12 Validation -> Avg Loss: 0.2120, Accuracy: 0.8652
+
+===== Epoch 13/15 =====
+                                                                                                   
+Epoch 13 Training   -> Avg Loss: 1.4918, Accuracy: 0.8871
+                                                             
+Epoch 13 Validation -> Avg Loss: 0.2043, Accuracy: 0.8877
+
+===== Epoch 14/15 =====
+                                                                                                   
+Epoch 14 Training   -> Avg Loss: 1.5022, Accuracy: 0.8882
+                                                             
+Epoch 14 Validation -> Avg Loss: 0.1877, Accuracy: 0.8929
+
+===== Epoch 15/15 =====
+                                                                                                   
+Epoch 15 Training   -> Avg Loss: 1.5130, Accuracy: 0.8909
+                                                             
+Epoch 15 Validation -> Avg Loss: 0.1944, Accuracy: 0.8845
+
+
+============================================================
+--- XAI EVALUATION COMPLETE ---
+Results saved to: comprehensive_xai_outputs
+Processed 10 samples successfully
+============================================================
+
+--- [7/8] Concept Activation Vectors (CAV) and TCAV Analysis ---
+
+--- CAV/TCAV Concept Analysis Demonstration ---
+Extracting concept activations...
+Training CAVs...
+  CAV trained for video_extractor.projection - Accuracy: 0.863
+  TCAV Score: 0.617
+  CAV trained for audio_extractor.gru - Accuracy: 0.750
+  TCAV Score: 1.000
+  CAV trained for gated_attention_layers.0.audio_to_video_attn - Accuracy: 0.825
+  TCAV Score: 1.000
+  CAV trained for gated_attention_layers.1.audio_to_video_attn - Accuracy: 0.825
+  TCAV Score: 1.000
+  CAV trained for classification_head - Accuracy: 0.800
+  TCAV Score: 1.000
+CAV analysis visualization saved to: cav_tcav_outputs/cav_analysis_fake_vs_real.png
+
+2833.0s	36	--- Final Test Results ---
+2833.0s	37	Total Samples Tested: 26097
+2833.0s	38	
+2833.0s	39	--- Classification Report ---
+2833.0s	40	              precision    recall  f1-score   support
+2833.0s	41	
+2833.0s	42	    Real (0)       0.61      0.85      0.71      6906
+2833.0s	43	    Fake (1)       0.94      0.80      0.86     19191
+2833.0s	44	
+2833.0s	45	    accuracy                           0.81     26097
+2833.0s	46	   macro avg       0.77      0.83      0.79     26097
+2833.0s	47	weighted avg       0.85      0.81      0.82     26097
+2833.0s	48	
+2833.0s	49	
+2833.0s	50	--- Confusion Matrix ---
+2833.0s	51	        Predicted
+2833.0s	52	       Real  Fake
+2833.0s	53	Real   5886  1020 
+2833.0s	54	Fake   3822  15369
+2833.0s	55	
+2833.0s	56	--- Final Model Performance ---
+2833.0s	57	Accuracy: 0.8144 (21255/26097)
+2833.0s	58	F1-Score: 0.8639 (Fake class)
+2833.0s	59	F1-Score: 0.7088 (Real class)
+2833.0s	60	Macro F1: 0.7864

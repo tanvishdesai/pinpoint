@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "total_samples": 10,
+    "accuracy": 1.0,
+    "avg_correct_confidence": 0.5020034373737872,
+    "avg_incorrect_confidence": 0,
+    "technique_success_rates": {
+      "integrated_gradients": 1.0,
+      "lrp": 1.0,
+      "attention": 1.0,
+      "counterfactual": 1.0
+    }
+  },
+  "detailed_results": [
+    {
+      "sample_idx": 1007,
+      "prediction": "Fake",
+      "ground_truth": "Fake",
+      "confidence": 0.9999902248382568,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 662,
+      "prediction": "Fake",
+      "ground_truth": "Fake",
+      "confidence": 0.9999676942825317,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 65,
+      "prediction": "Fake",
+      "ground_truth": "Fake",
+      "confidence": 0.9998432397842407,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 244,
+      "prediction": "Fake",
+      "ground_truth": "Fake",
+      "confidence": 0.9993987083435059,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 800,
+      "prediction": "Fake",
+      "ground_truth": "Fake",
+      "confidence": 0.9999547004699707,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 1411,
+      "prediction": "Real",
+      "ground_truth": "Real",
+      "confidence": 0.0017357324250042439,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 837,
+      "prediction": "Real",
+      "ground_truth": "Real",
+      "confidence": 0.008287533186376095,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 603,
+      "prediction": "Real",
+      "ground_truth": "Real",
+      "confidence": 0.0031557565089315176,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 323,
+      "prediction": "Real",
+      "ground_truth": "Real",
+      "confidence": 0.005160058382898569,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    },
+    {
+      "sample_idx": 1497,
+      "prediction": "Real",
+      "ground_truth": "Real",
+      "confidence": 0.002540725516155362,
+      "techniques_applied": [
+        "integrated_gradients",
+        "lrp",
+        "attention",
+        "counterfactual",
+        "shap",
+        "summary"
+      ]
+    }
+  ]
+}

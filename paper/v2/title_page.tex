@@ -1,0 +1,52 @@
+\documentclass[preprint,12pt,number]{elsarticle}
+
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\journal{Ain Shams Engineering Journal}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{PinPoint: Synchronization-Aware and Explainable Audio--Visual Deepfake Detection}
+
+\author[inst1]{Palak Parmar}
+\ead{24rcp002@sot.pdpu.ac.in}
+\author[inst2]{Chintan Bhatt\corref{cor1}}
+\ead{cbhatt@uow.edu.au}
+\author[inst1]{SantoshKumar Bharti}
+\ead{santosh.bharti@sot.pdpu.ac.in}
+
+\cortext[cor1]{Corresponding author.}
+
+\address[inst1]{Department of Computer Science and Engineering, School of Science and Technology, Pandit Deendayal Energy University, Gandhinagar, Gujarat, India}
+\address[inst2]{University of Wollongong, Australia}
+
+\begin{abstract}
+Audio--visual deepfakes create a forensic challenge because a detector must identify manipulated media while also exposing evidence that can be inspected by human reviewers. Existing multimodal detectors often fuse acoustic and visual features without explicitly constraining whether the learned interaction reflects temporal synchrony between speech and facial motion. This paper presents PinPoint, a synchronization-aware audio--visual detector designed to make cross-modal alignment both predictive and auditable. PinPoint combines an explainability-compatible ResNet-18 visual encoder, a convolutional Gated Recurrent Unit audio encoder, stacked gated cross-attention blocks, a three-stage curriculum, and a multi-component synchronization loss that encourages aligned real samples to produce diagonal, concentrated, and temporally smooth audio-to-video attention maps. On a unified benchmark constructed from LAV-DF and FakeAVCeleb, PinPoint achieves 97.47\% accuracy over 26,097 test samples, with macro F1 of 0.9680 and fake-class F1 of 0.9825. Ablation experiments show that removing the gate, synchronization loss, or curriculum reduces accuracy to 58.35\%, 75.47\%, and 81.44\%, respectively. A multimodal explainable artificial intelligence analysis links the predictions to mouth-region, acoustic-feature, and lip-sync evidence. These results indicate that synchrony-aware supervision can improve deepfake detection accuracy while making model behavior easier to audit.
+\end{abstract}
+
+\begin{keyword}
+Deepfake detection \sep Audio--visual fusion \sep Explainable artificial intelligence \sep Synchronization loss \sep Cross-attention \sep Curriculum learning
+\end{keyword}
+
+\end{frontmatter}
+
+\section*{Declarations}
+
+\textbf{Competing interests.} The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+\textbf{Funding.} This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+
+\textbf{Data availability.} LAV-DF and FakeAVCeleb are publicly described datasets. Derived preprocessed tensors and trained model artifacts can be made available by the authors upon reasonable request, subject to the licenses and access terms of the original datasets.
+
+\textbf{Code availability.} The implementation is available in the project repository during review and can be released with the final manuscript subject to institutional approval.
+
+\textbf{Author contributions.} Palak Parmar: Conceptualization, methodology, software, investigation, data curation, visualization, writing - original draft. Chintan Bhatt: Supervision, methodology, validation, writing - review and editing. SantoshKumar Bharti: Supervision, validation, visualization, writing - review and editing. Please review and edit these CRediT roles before submission.
+
+\textbf{Acknowledgements.} The authors acknowledge the open-source software community and the maintainers of the public benchmark datasets used in this work.
+
+\textbf{Declaration of generative AI and AI-assisted technologies in the writing process.} During preparation of this manuscript, the authors used AI-assisted writing support to reorganize and edit language from project materials. The authors reviewed, edited, and verified the final content and take full responsibility for the manuscript. Please confirm this statement matches the authors' actual use before submission.
+
+\end{document}

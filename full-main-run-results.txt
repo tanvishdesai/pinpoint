@@ -1,0 +1,61 @@
+Epoch 1 Validation -> Avg Loss: 0.3835, Accuracy: 0.7174
+Epoch 2 Training   -> Avg Loss: 1.8268, Accuracy: 0.6632
+Epoch 2 Validation -> Avg Loss: 0.5523, Accuracy: 0.7290
+Epoch 3 Training   -> Avg Loss: 1.1099, Accuracy: 0.6141
+Epoch 3 Validation -> Avg Loss: 0.4365, Accuracy: 0.7232
+Epoch 4 Validation -> Avg Loss: 0.3469, Accuracy: 0.7845
+Epoch 5 Validation -> Avg Loss: 0.1822, Accuracy: 0.8768
+Epoch 6 Training   -> Avg Loss: 1.5731, Accuracy: 0.9053
+Epoch 6 Validation -> Avg Loss: 0.0781, Accuracy: 0.9516
+Epoch 7 Training   -> Avg Loss: 1.5220, Accuracy: 0.9300
+Epoch 7 Validation -> Avg Loss: 0.1333, Accuracy: 0.8981
+Epoch 8 Validation -> Avg Loss: 0.0498, Accuracy: 0.9729
+Epoch 9 Validation -> Avg Loss: 0.0619, Accuracy: 0.9561
+Epoch 10 Training   -> Avg Loss: 1.3852, Accuracy: 0.9559
+Epoch 10 Validation -> Avg Loss: 0.0624, Accuracy: 0.9710
+Epoch 11 Training   -> Avg Loss: 1.4006, Accuracy: 0.9612
+Epoch 11 Validation -> Avg Loss: 0.0773, Accuracy: 0.9716
+Epoch 12 Validation -> Avg Loss: 0.0405, Accuracy: 0.9781
+Epoch 13 Training   -> Avg Loss: 1.3460, Accuracy: 0.9626
+Epoch 13 Validation -> Avg Loss: 0.0413, Accuracy: 0.9781
+Epoch 14 Training   -> Avg Loss: 1.3807, Accuracy: 0.9632
+Epoch 14 Validation -> Avg Loss: 0.0385, Accuracy: 0.9800
+Epoch 15 Training   -> Avg Loss: 1.3989, Accuracy: 0.9682
+Epoch 15 Validation -> Avg Loss: 0.0391, Accuracy: 0.9794
+17233.6s	453	--- CAV/TCAV Concept Analysis Demonstration ---
+17233.6s	454	Extracting concept activations...
+17239.4s	455	Training CAVs...
+17239.4s	456	  CAV trained for video_extractor.projection - Accuracy: 0.794
+17240.1s	457	  TCAV Score: 0.975
+17240.1s	458	  CAV trained for audio_extractor.gru - Accuracy: 0.625
+17240.7s	459	  TCAV Score: 1.000
+17240.7s	460	  CAV trained for gated_attention_layers.0.audio_to_video_attn - Accuracy: 0.775
+17241.3s	461	  TCAV Score: 0.500
+17241.3s	462	  CAV trained for gated_attention_layers.1.audio_to_video_attn - Accuracy: 1.000
+17241.9s	463	  TCAV Score: 1.000
+17241.9s	464	  CAV trained for classification_head - Accuracy: 1.000
+17242.5s	465	  TCAV Score: 1.000
+20042.4s	513	Total Samples Tested: 26097
+20042.4s	514	
+20042.4s	515	--- Classification Report ---
+20042.4s	516	              precision    recall  f1-score   support
+20042.4s	517	
+20042.4s	518	    Real (0)       0.93      0.98      0.95      6906
+20042.4s	519	    Fake (1)       0.99      0.97      0.98     19191
+20042.4s	520	
+20042.4s	521	    accuracy                           0.97     26097
+20042.4s	522	   macro avg       0.96      0.98      0.97     26097
+20042.4s	523	weighted avg       0.98      0.97      0.97     26097
+20042.4s	524	
+20042.4s	525	
+20042.4s	526	--- Confusion Matrix ---
+20042.4s	527	        Predicted
+20042.4s	528	       Real  Fake
+20042.4s	529	Real   6767  139  
+20042.4s	530	Fake   522   18669
+20042.4s	531	
+20042.4s	532	--- Final Model Performance ---
+20042.4s	533	Accuracy: 0.9747 (25436/26097)
+20042.4s	534	F1-Score: 0.9825 (Fake class)
+20042.4s	535	F1-Score: 0.9535 (Real class)
+20042.4s	536	Macro F1: 0.9680
