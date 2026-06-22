@@ -59,3 +59,16 @@ checkpoint/
 
 full-main-run-graphs/best_pinpoint_model_antisocial.pth
 no-curr-graphs/best_pinpoint_model_antisocial.pth
+
+# LaTeX build artifacts (keep .tex/.bst/.cls sources, drop generated junk)
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.blg
+
+# Elevation suite outputs (regenerated on Kaggle)
+elevation_outputs/
