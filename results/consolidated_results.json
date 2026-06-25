@@ -1,0 +1,105 @@
+{
+  "_about": "PinPoint consolidated source-of-truth results. Trust tags: trusted | invalid | not_run. See RESULTS.md for full annotations.",
+  "consolidated_on": "2026-06-26",
+  "test_sets": {
+    "merged": {"name": "LAV-DF + FakeAVCeleb", "n": 26097, "n_real": 6906, "n_fake": 19191},
+    "lavdf_only": {"name": "LAV-DF only", "n": 1550, "n_real": 405, "n_fake": 1145}
+  },
+  "main_detection_original": {
+    "trust": "trusted",
+    "test_set": "merged",
+    "provenance": "full-main-run-results.txt",
+    "accuracy": 0.9747,
+    "macro_f1": 0.9680,
+    "fake_f1": 0.9825,
+    "real_f1": 0.9535,
+    "real_precision": 0.93, "real_recall": 0.98,
+    "fake_precision": 0.99, "fake_recall": 0.97,
+    "confusion": {"real_real": 6767, "real_fake": 139, "fake_real": 522, "fake_fake": 18669}
+  },
+  "ablations": {
+    "trust": "trusted",
+    "test_set": "merged",
+    "provenance": ["no-sync-results.txt", "no-gate-results.txt", "no-curr-results.txt"],
+    "no_sync":  {"accuracy": 0.7547, "macro_f1": 0.7342, "fake_f1": 0.8067, "real_f1": 0.6616},
+    "no_gate":  {"accuracy": 0.5835, "macro_f1": 0.5813, "fake_f1": 0.6115, "real_f1": 0.5510},
+    "no_curriculum": {"accuracy": 0.8144, "macro_f1": 0.7864, "fake_f1": 0.8639, "real_f1": 0.7088}
+  },
+  "elevation_tier0_detection": {
+    "trust": "trusted",
+    "test_set": "lavdf_only",
+    "provenance": "elevation/eval_metrics.py -> metrics.json",
+    "auc": 0.9968,
+    "ap": 0.9988,
+    "eer": 0.0178,
+    "eer_threshold": 0.83056640625,
+    "acc@0.5": 0.9806451612903225,
+    "acc@eer": 0.9819354838709677,
+    "macro_f1@0.5": 0.9750502214896466,
+    "macro_f1@eer": 0.9768585663828553,
+    "fake_f1@0.5": 0.9868651488616462,
+    "real_f1@0.5": 0.9632352941176471,
+    "brier": 0.015573855188405955,
+    "ece": 0.01394377493089246,
+    "per_source_auc": {"lavdf": {"auc": 0.9967922799072726, "ap": 0.9987686746049047, "n_fake": 1145, "n_real": 405}},
+    "per_manip_auc": {
+      "audio_only": {"auc": 0.9979208973987043, "ap": 0.9973279694076824, "n_fake": 383, "n_real": 405},
+      "both": {"auc": 0.9970073039881069, "ap": 0.9971133712107406, "n_fake": 382, "n_real": 405},
+      "video_only": {"auc": 0.9954385964912281, "ap": 0.9953599938735807, "n_fake": 380, "n_real": 405}
+    }
+  },
+  "dino_adapter_variant": {
+    "trust": "trusted",
+    "note": "Underperforms ResNet on the same lavdf_only test set; report as honest negative.",
+    "test_set": "lavdf_only",
+    "provenance": "elevation/dino_adapter_variant.py -> dino_adapter.json",
+    "backbone": "dinov2_vits14",
+    "image_size": 224,
+    "epochs": 8,
+    "minutes": 136.08863156636556,
+    "best_val_auc": 0.8991171512852928,
+    "test": {"auc": 0.9100770931047496, "ap": 0.9608898291534045, "eer": 0.1614696210038277, "acc@0.5": 0.8580645161290322, "n": 1550, "n_fake": 1145}
+  },
+  "localization": {
+    "trust": "trusted",
+    "finding": "negative",
+    "note": "Attention does NOT localize manipulated frames (frame AUC at chance; pointing-game at/below random).",
+    "test_set": "lavdf_only_fakes",
+    "provenance": "elevation/localization_eval.py -> localization.json",
+    "n_clips": 1145,
+    "skipped_no_duration": 0,
+    "mean_per_clip_frame_auc": 0.5348067252075358,
+    "mean_per_clip_frame_ap": 0.20340110130362984,
+    "n_clips_frame_auc": 1118,
+    "pointing_game_acc": 0.08471615720524017,
+    "pointing_game_random": 0.08931586608442502,
+    "AP@0.5": 0.0029145005505673382,
+    "AP@0.75": 0.0002015609582161103
+  },
+  "faithfulness_v1": {
+    "trust": "invalid",
+    "reason": "Degenerate: every method incl. random ~0.99 on both curves. Audio-centric model perturbed on video only, with an OOD zero baseline. DO NOT CITE.",
+    "provenance": "elevation/faithfulness_eval.py (v1) -> faithfulness.json",
+    "n_clips": 300,
+    "methods": {
+      "attention": {"deletion_auc": 0.9902, "insertion_auc": 0.9902, "faithfulness": -0.0000},
+      "integrated_gradients": {"deletion_auc": 0.9880, "insertion_auc": 0.9918, "faithfulness": 0.0038},
+      "grad_cam": {"deletion_auc": 0.9908, "insertion_auc": 0.9888, "faithfulness": -0.0020},
+      "random": {"deletion_auc": 0.9900, "insertion_auc": 0.9906, "faithfulness": 0.0006}
+    }
+  },
+  "earlier_xai": {
+    "trust": "weak",
+    "note": "Descriptor only; not a faithfulness claim.",
+    "provenance": "paper/v2/TECHNICAL_DUMP.md",
+    "gini_video": 0.631,
+    "gini_audio": 0.928,
+    "inter_technique_consistency_spearman": 0.514,
+    "tcav_lipsync": {"video_extractor.projection": 0.975, "audio_extractor.gru": 1.000, "gated_layer0": 0.500, "gated_layer1": 1.000, "classification_head": 1.000}
+  },
+  "not_run": {
+    "faithfulness_v2": {"trust": "not_run", "note": "Fixed script written; Kaggle session crashed before completion."},
+    "cross_dataset": {"trust": "not_run", "scripts": "elevation/crossdataset_train.py"},
+    "ablations_with_auc": {"trust": "not_run", "how": "re-run elevation/eval_metrics.py per ablation checkpoint"}
+  }
+}
